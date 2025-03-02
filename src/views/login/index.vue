@@ -71,10 +71,10 @@ const rules = {
 
 const refreshCaptcha = async () => {
   try {
-    const res = await axios.get('/admin/api/v1/captcha')
-    captchaUrl.value = res.data.image
-    captchaId.value = res.data.captcha_id
-    loginForm.captcha_id = res.data.captcha_id
+    const res = await axios.get('/admin/api/v1/auth/captcha')
+    captchaUrl.value = res.data.data.captcha_url
+    captchaId.value = res.data.data.captcha_id
+    loginForm.captcha_id = res.data.data.captcha_id
   } catch (error) {
     ElMessage.error('获取验证码失败')
   }
