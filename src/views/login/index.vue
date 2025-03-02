@@ -85,7 +85,7 @@ const handleLogin = async () => {
   await loginFormRef.value.validate(async (valid) => {
     if (valid) {
       try {
-        const res = await axios.post('/admin/api/v1/login', loginForm)
+        const res = await axios.post('/admin/api/v1/auth/login', loginForm)
         localStorage.setItem('token', res.data.token)
         ElMessage.success('登录成功')
         router.push('/')
