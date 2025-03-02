@@ -9,7 +9,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/admin/api': {
-        target: 'http://192.168.1.42:8888',
+        target: 'http://0.0.0.0:8888',
         changeOrigin: true,
         secure: false,
         ws: false,

@@ -16,8 +16,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 // 配置axios默认值
 import axios from 'axios'
-// 使用相对路径，让请求通过 Vite 代理
-axios.defaults.baseURL = ''
+// 根据环境变量设置 baseURL
+axios.defaults.baseURL = import.meta.env.VITE_APP_API_BASE_URL
 axios.defaults.timeout = 5000
 axios.interceptors.request.use(
   config => {
